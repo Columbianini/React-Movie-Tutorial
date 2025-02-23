@@ -25,7 +25,7 @@ function Home() {
         <div className="movies-grid">
             {
                 // for dynamic rendering, you need to have a unqiue "key" property for component even itself does not have the "key" property
-                movies.map(movie => <MovieCard movie={movie} key={movie.id} />)
+                movies.map(movie => (movie.title.toLowerCase().startsWith(searchQuery) && <MovieCard movie={movie} key={movie.id} />) )
             }
         </div>
     </div>
